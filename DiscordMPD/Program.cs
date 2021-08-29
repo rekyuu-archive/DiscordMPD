@@ -2,7 +2,6 @@
 using System.Threading;
 using System.Threading.Tasks;
 using DiscordRPC;
-using DiscordRPC.Logging;
 using MpcCore;
 using MpcCore.Contracts;
 using MpcCore.Contracts.Mpd;
@@ -21,8 +20,6 @@ namespace DiscordMPD
             
             // Set up Discord client.
             DiscordRpcClient discordClient = new DiscordRpcClient("880327448900821033");
-
-            discordClient.Logger = new ConsoleLogger() { Level = LogLevel.Warning };
             discordClient.Initialize();
 
             // Data used to determine if a presence update is needed.
